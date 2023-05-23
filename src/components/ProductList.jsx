@@ -5,7 +5,7 @@ export const ProductList = () => {
   const [products, setProducts] = useState([])
 //   const [product, setProduct] = uPeState(6 ) 
 // //   Estado para decir cuantos prod tener por pagina
-// const [currentPage, setCurrentPage] = useState(1)
+const [currentPage, setCurrentPage] = useState(1)
 // // Estado para la pagina actual en la que estemos, inicia siempre en 1
 
 const productList = async() => {
@@ -37,7 +37,7 @@ useEffect(() => {
         </div>
        ))}
      </div>
-     <Pagination/>
+     <Pagination productsPorPage ={productsPorPage} currentPage/>
     </>
   )
 }
