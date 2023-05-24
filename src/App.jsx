@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { Pagination } from './components/Pagination'
 import { ProductList } from './components/ProductList'
+import "boxicons";
+import { Header } from './components/Header';
 
 
 function App() {
@@ -8,9 +10,11 @@ function App() {
 
   return (
     <>
-    <h1 className='title'>FakeStore</h1>
 
+   
+  
     <ProductList/>
+ 
    
     </>
   )
