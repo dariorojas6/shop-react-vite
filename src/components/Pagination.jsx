@@ -9,22 +9,34 @@ export const Pagination = ({ productsPerPage, currentPage, setCurrentPage, total
         pageNumbers.push(i)
     }
 
-    const onPreviousPage = () => {
-        setCurrentPage(currentPage - 1)
-    }
+    const onPreviousPage = ()=>{
+        //actualizar mi state de pagina actual
+        //si mi pagina actual es igual a 1 
+        if (currentPage === 1 ) {
+            //button deactivado
+            <button disabled></button>
+        }else{
+            // si no mi state de pagina actual es el resultado de pagina actual menos 1
+            setCurrentPage(currentPage -1)
+        } 
+      }
 
-    const onNextPage = () => {
-        setCurrentPage(currentPage + 1)
-    }
-
+      const onNextPage = ()=>{
+        //actualizar mi state de pagina actual
+          if (currentPage >= pageNumbers.length) {
+            <button disabled ></button>
+          } else { 
+              setCurrentPage(currentPage +1)
+          }
+        }
     const onEspecificPage = (e) => {
         setCurrentPage(e)
     }
 
     return (
         <nav className="pagination is-centered mb-6" role="navigation" aria-label="pagination">
-            <a className={`pagination-previous ${currentPage === 1 ? 'is-disabled' : ''}`} onClick={onPreviousPage}>Anterior</a>
-            <a className={`pagination-next ${currentPage >= pageNumbers.length ? 'is-disabled' : ''}`} onClick={onNextPage}>Siguiente</a>
+            <button className={`pagination-previous ${currentPage === 1 ? 'is-disabled' : ''}`} onClick={onPreviousPage}>Anterior</button>
+            <button className={`pagination-next ${currentPage >= pageNumbers.length ? 'is-disabled' : ''}`} onClick={onNextPage}>Siguiente</button>
             <ul className="pagination-list">
                 {
                     pageNumbers.map(noPage => (
