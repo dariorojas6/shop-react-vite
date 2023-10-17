@@ -12,7 +12,8 @@ export const ProductList = () => {
   // // Estado para la pagina actual en la que estemos, inicia siempre en 1
 
   const productList = async () => {
-    const data = await fetch('https://fakestoreapi.com/products')
+    const data = await fetch('https://bymykel.github.io/CSGO-API/api/{es-ES}')
+    console.log(data)
     const products = await data.json()
 
     setProducts(products)
@@ -25,7 +26,7 @@ export const ProductList = () => {
   const lastIndex = currentPage * productsPerPage // 4 * 6 = 6
   const firstIndex = lastIndex - productsPerPage // 6 - 6 = 0
 
-  return (
+  return ( 
     <> 
     <Header></Header>
       <div className="container-products">
