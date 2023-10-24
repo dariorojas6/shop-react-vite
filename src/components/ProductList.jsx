@@ -13,7 +13,7 @@ export const ProductList = () => {
 
   const productList = async () => {
     const data = await fetch('https://bymykel.github.io/CSGO-API/api/{es-ES}')
-    console.log(data)
+    console.log(data) 
     const products = await data.json()
 
     setProducts(products)
